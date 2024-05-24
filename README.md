@@ -8,6 +8,6 @@
 
 <h3>Páginas da Wiki:</h3>
 <br>
-<h3>[https://github.com/<Caetano-Ventura-Coutinho>/<Cleany-Beaches>/wiki](https://github.com/Caetano-Ventura-Coutinho/Cleany-Beaches/wiki/Proposta-e-Pesquisa)</h3>
+<h3>(https://github.com/Caetano-Ventura-Coutinho/Cleany-Beaches/wiki/Proposta-e-Pesquisa)</h3>
 <br>
 <h3>https://github.com/Caetano-Ventura-Coutinho/Cleany-Beaches/wiki/Prot%C3%B3tipo,-Descri%C3%A7%C3%A3o-e-Recursos</h3>
