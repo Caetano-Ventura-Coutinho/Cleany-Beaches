@@ -21,4 +21,6 @@ flutter:
   uses-material-design: true
   assets: 
   - img/imgPraiaF.png
+  - img/imgPraiaL.png
+  - img/imgPraiaE.png
   
