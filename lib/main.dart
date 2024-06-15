@@ -105,8 +105,10 @@ class MainApp extends StatelessWidget {
                     child: TextButton.icon(
                         onPressed: () {},
                         icon: const Icon(Icons.groups_2, size: 70),
-                        label: const Text("ONG's Saiba Mais",
-                            style: TextStyle(fontSize: 20)),
+                        label: const Text("ONG's: Saiba Mais",
+                            style: TextStyle(fontSize: 20,),
+                            softWrap: true
+                            ),                            
                         style: TextButton.styleFrom(
                             foregroundColor: Colors.black,
                             backgroundColor: Colors.white,
