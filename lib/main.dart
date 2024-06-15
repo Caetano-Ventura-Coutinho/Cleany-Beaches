@@ -1,9 +1,11 @@
+import 'package:cleany_beaches/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const MaterialApp (title: "Cleany Beaches",
+  home: MainApp(),));
 }
 
 class MainApp extends StatelessWidget {
@@ -60,7 +62,7 @@ class MainApp extends StatelessWidget {
                               style: TextButton.styleFrom(
                                 foregroundColor: Colors.black,
                               ),
-                              onPressed: () {},
+                              onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const Routes(),));},
                               icon: const Icon(Icons.location_on),
                               label: const Text('Clique para localização')),
                         ],
@@ -85,7 +87,7 @@ class MainApp extends StatelessWidget {
                               style: TextButton.styleFrom(
                                 foregroundColor: Colors.black,
                               ),
-                              onPressed: () {},
+                              onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const Routes(),));},
                               icon: const Icon(Icons.location_on),
                               label: const Text('Clique para localização')),
                         ],
@@ -131,7 +133,7 @@ class MainApp extends StatelessWidget {
                               style: TextButton.styleFrom(
                                 foregroundColor: Colors.black,
                               ),
-                              onPressed: () {},
+                              onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const Routes(),));},
                               icon: const Icon(Icons.location_on),
                               label: const Text('Clique para localização')),
                         ],
@@ -145,3 +147,5 @@ class MainApp extends StatelessWidget {
         ));
   }
 }
+
+
