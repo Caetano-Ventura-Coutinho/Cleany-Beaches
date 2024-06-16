@@ -5,7 +5,7 @@
 
 <h3>Nome dos integrantes: Artur Albertini Leal e Caetano Ventura Coutinho.</h3>
 
-<h3>Descrição: Nosso aplicativo tem como objetivo juntar e organizar diversas páginas de ONG's que cuidam das limpezas das praias no litoral de São Paulo, incentivando e facilitando a participação de nossos usuários numa causa imporante para os seres humanos e para o planeta.<h3>
+<h3>Descrição: O aplicativo tem o propósito de incentivar não só os paulistas mas todo o Brasil a cuidar de nossas praias. Sabe-se que as ações das Organizações não Governamentais(ONG's) são de suma importância para esse objetivo, e precisamos do apoio voluntário do maior número de pessoas possível. O projeto foi feito em celebração aos 470 anos de São Paulo, dando ênfase em suas regiões litorâneas, também fornecendo informações turísticas úteis para a visitação de nossas praias<h3>
 
 <h3>Páginas da Wiki:</h3>
 <h3>[Proposta e Pesquisa](https://github.com/Caetano-Ventura-Coutinho/Cleany-Beaches/wiki/Proposta-e-Pesquisa#nossa-proposta) </h3>
