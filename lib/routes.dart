@@ -29,8 +29,6 @@ class Routes extends StatelessWidget {
           destinations: const [
             NavigationDestination(icon: Icon(Icons.home), label: 'Início'),
             NavigationDestination(icon: Icon(Icons.groups), label: "ONG's"),
-            NavigationDestination(
-                icon: Icon(Icons.location_on), label: 'Rotas'),
             NavigationDestination(icon: Icon(Icons.info), label: 'Sobre')
           ],
           backgroundColor: const Color.fromARGB(255, 0, 186, 243),
