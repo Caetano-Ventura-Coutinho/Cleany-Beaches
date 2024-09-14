@@ -23,19 +23,6 @@ class Routes extends StatelessWidget {
               icon: const Icon(Icons.keyboard_return, color: Colors.black)),
         ),
 
-        //NavigationBar
-        bottomNavigationBar: NavigationBar(
-          surfaceTintColor: const Color.fromARGB(255, 133, 226, 255),
-          destinations: const [
-            NavigationDestination(icon: Icon(Icons.home), label: 'Início'),
-            NavigationDestination(icon: Icon(Icons.groups), label: "ONG's"),
-            NavigationDestination(
-                icon: Icon(Icons.location_on), label: 'Rotas'),
-            NavigationDestination(icon: Icon(Icons.info), label: 'Sobre')
-          ],
-          backgroundColor: const Color.fromARGB(255, 0, 186, 243),
-        ),
-
         body: Center(
           child: Column(
             children: <Widget>[

@@ -1,22 +1,41 @@
+import 'dart:io';
+import 'dart:js_interop';
+
 import 'package:cleany_beaches/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:cleany_beaches/Praia.dart';
+import 'package:cleany_beaches/praias.dart';
+import 'package:cleany_beaches/ongsPags.dart';
+import 'package:cleany_beaches/sobre.dart';
 
 void main() {
-  runApp(const MaterialApp (title: "Cleany Beaches",
+  runApp(const MaterialApp (
+    title: "Cleany Beaches",
+    debugShowCheckedModeBanner: false,
   home: MainApp(),));
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
+
+  @override
+  MainAPP createState() => MainAPP();
+}
+
+  int pag = 0;
+  int cont = 0;
+
+class MainAPP extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
-        theme: ThemeData(
-            scaffoldBackgroundColor: const Color.fromARGB(255, 255, 250, 206)),
+      debugShowCheckedModeBanner: false,
         home: Scaffold(
+          backgroundColor: const Color.fromARGB(255, 255, 250, 206),
 
           //AppBar
           appBar: AppBar(
@@ -25,129 +44,51 @@ class MainApp extends StatelessWidget {
             titleTextStyle: GoogleFonts.homenaje(fontSize: 32),
           ),
 
-          //NavigationBar
-          bottomNavigationBar: NavigationBar(
+          bottomNavigationBar: NavigationBarTheme(
+          data: const NavigationBarThemeData(
+            backgroundColor:  Color.fromARGB(255, 0, 186, 243),),
+          child: NavigationBar(
+              selectedIndex: pag,
             surfaceTintColor: const Color.fromARGB(255, 133, 226, 255),
-            destinations: const [
-              NavigationDestination(icon: Icon(Icons.home), label: 'Início'),
-              NavigationDestination(icon: Icon(Icons.groups), label: "ONG's"),
-              NavigationDestination(icon: Icon(Icons.location_on), label: 'Rotas'),
-              NavigationDestination(icon: Icon(Icons.info), label: 'Sobre')
+            destinations: <Widget>[
+              _Navegar(0, 'Início', const Icon(Icons.home)),
+              _Navegar(1, 'ONG\'s', const Icon(Icons.groups)),
+              _Navegar(2, 'Sobre', const Icon(Icons.info))
             ],
-            backgroundColor: const Color.fromARGB(255, 0, 186, 243),
           ),
+        ),
+        body: IndexedStack(
+          index: pag,
+          children: const <Widget>[
+            PraiasPag(),
+            ongsPag(),
+            Sobre(),
+          ],
+        ),
+      ),
           
-          //Body
-          body: Center(
-            child: Column(
-              children: <Widget>[
-                Text(
-                  'Praias',
-                  style: GoogleFonts.getFont("Jost", fontSize: 26),
-                ),
+        )
 
-                //Praia do Félix
-                Container(
-                  margin: const EdgeInsets.all(30),
-                  child: Row(
-                    children: <Widget>[
-                      Image.asset('img/imgPraiaF.png'),
-                      Column(
-                        children: <Widget>[
-                          Text(
-                            'Praia do Félix',
-                            style: GoogleFonts.getFont("Jost", fontSize: 16),
-                          ),
-                          TextButton.icon(
-                              style: TextButton.styleFrom(
-                                foregroundColor: Colors.black,
-                              ),
-                              onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const Routes(),));},
-                              icon: const Icon(Icons.location_on),
-                              label: const Text('Clique para localização')),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
+          ;
+        }
 
-                //Praia do Lázaro
-                Container(
-                  margin: const EdgeInsets.all(30),
-                  child: Row(
-                    children: <Widget>[
-                      Image.asset('img/imgPraiaL.png'),
-                      Column(
-                        children: <Widget>[
-                          Text(
-                            'Praia do Lázaro',
-                            style: GoogleFonts.getFont("Jost", fontSize: 16),
-                          ),
-                          TextButton.icon(
-                              style: TextButton.styleFrom(
-                                foregroundColor: Colors.black,
-                              ),
-                              onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const Routes(),));},
-                              icon: const Icon(Icons.location_on),
-                              label: const Text('Clique para localização')),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
+      Widget _Navegar(int pagi, String vlabel,  Widget icone){
+        return NavigationDestination(
+                  icon: _botao(pagi, icone),
+                  label: vlabel,
+              );
+      }
 
-                //Botão ONG
-                Container(
-                  margin: const EdgeInsets.all(40),
-                  child: SizedBox(
-                    width: 293,
-                    height: 84,
-                    child: TextButton.icon(
-                        onPressed: () {},
-                        icon: const Icon(Icons.groups_2, size: 70),
-                        label: const Text("ONG's: Saiba Mais",
-                            style: TextStyle(fontSize: 20,),
-                            softWrap: true
-                            ),                            
-                        style: TextButton.styleFrom(
-                            foregroundColor: Colors.black,
-                            backgroundColor: Colors.white,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8))),
-                            side: const BorderSide(color: Colors.black))),
-                  ),
-                ),
-
-                //Praia da Enseada
-                Container(
-                  margin: const EdgeInsets.all(30),
-                  child: Row(
-                    children: <Widget>[
-                      Image.asset('img/imgPraiaE.png'),
-                      Column(
-                        children: <Widget>[
-                          Text(
-                            'Praia da Enseada',
-                            style: GoogleFonts.getFont("Jost", fontSize: 16),
-                          ),
-                          TextButton.icon(
-                              style: TextButton.styleFrom(
-                                foregroundColor: Colors.black,
-                              ),
-                              onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const Routes(),));},
-                              icon: const Icon(Icons.location_on),
-                              label: const Text('Clique para localização')),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ));
+      Widget _botao(int pagi, Widget icone){
+        return IconButton(
+                  icon: icone,
+                  onPressed: (){
+                    setState(() {
+                      pag = pagi;
+                    });
+                  },
+                );
+      }
   }
-}
 
 
