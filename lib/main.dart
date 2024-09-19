@@ -1,7 +1,3 @@
-import 'dart:io';
-import 'dart:js_interop';
-
-import 'package:cleany_beaches/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';

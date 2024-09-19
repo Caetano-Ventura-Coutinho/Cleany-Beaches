@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class ONG
 {
   final int Id;
@@ -8,6 +10,9 @@ class ONG
   final String Email; 
   final String Site; 
   final int Telefone;
+  final Color corFundo;
+  final Color corText;
+  final String atuacao;
 
-  const ONG(this.Id, this.Nome, this.Img, this.Instagram, this.Facebook, this.Email, this.Site, this.Telefone);
+  const ONG(this.Id, this.Nome, this.Img, this.Instagram, this.Facebook, this.Email, this.Site, this.Telefone, this.corFundo, this.corText, this.atuacao);
 }
