@@ -25,10 +25,10 @@ class PraiasPag extends StatefulWidget {
       Praia(3,'Praia da Enseada', 'img/imgPraiaE.png', true, 'Acesso pela Rodovia Rio-Santos (BR-101). Basta seguir pela rodovia até o trevo de Ubatuba e então pegar a ,saída em direção ao bairro de Toninhas, onde a praia está localizada.', 'https://maps.app.goo.gl/4AvuN3ij53ZPPJRf7'),
       Praia(4,'Praia do Gonzaguinha', 'img/imgPraiaG.png', false, 'Pegue o ônibus 101 na Rodoviária de São Vicente. Após isso, desça na parada Praia do Gonzaguinha e siga as placas instrucionais, caminhando para a praia.', 'https://maps.app.goo.gl/nqRALLGEPhjw1eBk7'),
       Praia(5,'Praia da Maresia', 'img/PraiaM.png', true,  'O acesso à praia é pela BR-101 (Rodovia Rio-Santos), que segue ao longo de toda a faixa de areia e divide a zona comercial e as pousadas da praia. Ao longo da rodovia há vagas para estacionamento, assim como nas ruas adjacentes.',  'https://maps.app.goo.gl/Q72u7neMmMgEWEg26'),
-      Praia(6,'Praia do Bonete', 'img/PraiaB.png', true,   'Acesso por barco ou trilha.',   'https://maps.app.goo.gl/GjXi11td53Z4yMX86'),
-      Praia(7,'Praia do Prumirim', 'img/PraiaP.png', true, 'SP-125 (Rodovia Oswaldo Cruz).', 'https://maps.app.goo.gl/ev2tsLc7Z8UcCRkb7'),
-      Praia(8,'Praia do Gonzaga', 'img/PraiaG1.png', true, 'Av. Ana Costa.', 'https://maps.app.goo.gl/kJVKCq3N315k1Yk5A'),
-      Praia(9,'Balneário Adriana', 'img/PraiaA.png', true, '', 'https://www.google.com/maps/place/Balneário+Adriana,+Ilha+Comprida+-+SP,+11925-000/@-24.7255487,-47.54731,15z/data=!3m1!4b1!4m6!3m5!1s0x94daa2177deba7f5:0xa1c67b54591525!8m2!3d-24.7264807!4d-47.5361355!16s%2Fg%2F1ptyfppsh?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D'),
+      Praia(6,'Praia do Bonete', 'img/PraiaB.png', true,   'O acesso à praia pode ser feito a partir da praia de Picinguaba, onde é possível deixar o carro em um estacionamento próximo. Em seguida, há uma trilha que leva até a praia, com duração de cerca de 1h30 a 2h de caminhada. A trilha é bem marcada, mas recomenda-se ir com calçados adequados.',   'https://maps.app.goo.gl/GjXi11td53Z4yMX86'),
+      Praia(7,'Praia do Prumirim', 'img/PraiaP.png', true, 'Para chegar à Praia do Prumirim, você deve seguir pela Rodovia Rio-Santos (BR-101) até o km 80, onde há uma entrada sinalizada para a praia. A estrada que leva à praia é de terra e requer um carro com tração, especialmente em dias de chuva. Há opções de estacionamento próximo à praia.', 'https://maps.app.goo.gl/ev2tsLc7Z8UcCRkb7'),
+      Praia(8,'Praia do Gonzaga', 'img/PraiaG1.png', true, 'A Praia do Gonzaga está localizada no centro de Santos. O acesso é feito pela Avenida da Orla, onde há diversos estacionamentos nas ruas adjacentes. A praia é bastante urbanizada, com quiosques e restaurantes ao longo da orla, facilitando o acesso a serviços.', 'https://maps.app.goo.gl/kJVKCq3N315k1Yk5A'),
+      Praia(9,'Balneário Adriana', 'img/PraiaA.png', true, 'Para chegar ao Balneário Adriana, você deve seguir pela Rodovia BR-116 até a entrada para a Ilha Comprida. Após a travessia da balsa, siga pela SP-55 até encontrar as placas que indicam o acesso ao Balneário Adriana. Há estacionamento disponível nas proximidades da praia.', 'https://www.google.com/maps/place/Balneário+Adriana,+Ilha+Comprida+-+SP,+11925-000/@-24.7255487,-47.54731,15z/data=!3m1!4b1!4m6!3m5!1s0x94daa2177deba7f5:0xa1c67b54591525!8m2!3d-24.7264807!4d-47.5361355!16s%2Fg%2F1ptyfppsh?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D'),
     ];
 
 class PraiasPAG extends State<PraiasPag> {
@@ -55,7 +55,7 @@ class PraiasPAG extends State<PraiasPag> {
                   'Praias',
                   style: GoogleFonts.getFont("Jost", fontSize: 26),
                 ),
-
+              
                 _Lista(),
 
         Container(
