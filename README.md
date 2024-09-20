@@ -14,6 +14,6 @@
 
 [Protótipo, Descrição e Recursos](https://github.com/Caetano-Ventura-Coutinho/Cleany-Beaches/wiki/Prot%C3%B3tipo,-Descri%C3%A7%C3%A3o-e-Recursos);
 
-[Desenvolvimento da Aplicação (Versão: Produto Mínimo Viável)](https://github.com/Caetano-Ventura-Coutinho/Cleany-Beaches/wiki/Desenvolvimento-da-Aplica%C3%A7%C3%A3o-(Vers%C3%A3o:-Produto-M%C3%ADnimo-Vi%C3%A1ve)).
+[Desenvolvimento da Aplicação (Versão: Produto Mínimo Viável)](https://github.com/Caetano-Ventura-Coutinho/Cleany-Beaches/wiki/Desenvolvimento-da-Aplica%C3%A7%C3%A3o-(Vers%C3%A3o:-Produto-M%C3%ADnimo-Vi%C3%A1ve));
 
-[Documentação 3° Bimestre](https://github.com/Caetano-Ventura-Coutinho/Cleany-Beaches/wiki/Documentação-3º-Bimestre)
+[Documentação 3° Bimestre](https://github.com/Caetano-Ventura-Coutinho/Cleany-Beaches/wiki/Documentação-3º-Bimestre).
