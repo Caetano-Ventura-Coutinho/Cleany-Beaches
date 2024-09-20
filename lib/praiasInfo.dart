@@ -1,9 +1,6 @@
 import 'package:cleany_beaches/Praia.dart';
-import 'package:cleany_beaches/praias.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 
@@ -61,7 +58,7 @@ class praiaInfo extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       padding: const EdgeInsets.only(bottom: 20, top: 10),
                       margin: const EdgeInsets.only(left: 50),
-                      child: Text('Municipio: ' + praia.LinkMaps, style: const TextStyle(fontSize: 18))
+                      child: Text('Municipio: ' + praia.Mun, style: const TextStyle(fontSize: 18))
                     ),
 
                     Container(

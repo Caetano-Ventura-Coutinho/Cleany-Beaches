@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:cleany_beaches/Praia.dart';
 import 'package:cleany_beaches/praias.dart';
 import 'package:cleany_beaches/ongsPags.dart';
 import 'package:cleany_beaches/sobre.dart';
