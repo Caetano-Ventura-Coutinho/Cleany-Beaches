@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void sobre() {
-  runApp(const MaterialApp (title: "Cleany Beaches",
-  home: Sobre(),));
+  runApp(const Sobre());
 }
 
-class Sobre extends StatefulWidget {
+class Sobre extends StatelessWidget {
+
   const Sobre({super.key});
-
-
-  @override
-  SOBRE createState() => SOBRE();
-}
-
-class SOBRE extends State<Sobre> {
   @override
   Widget build(BuildContext context) {
 
@@ -40,5 +32,4 @@ Nosso aplicativo também inclui informações sobre as praias mais próximas de 
                     ),
           )
         )
-
-          );}}
+        );}}

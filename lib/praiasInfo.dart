@@ -1,12 +1,7 @@
 import 'package:cleany_beaches/Praia.dart';
-import 'package:cleany_beaches/praias.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-
-
 
 void PraiaInfo() {
   runApp(const praiaInfo());
@@ -26,8 +21,7 @@ class praiaInfo extends StatelessWidget {
             titleTextStyle: GoogleFonts.homenaje(fontSize: 35),
           ),
 
-          body: Container(
-            child: SingleChildScrollView(
+          body: SingleChildScrollView(
               child: Column(
                 children: [
                   Container(
@@ -48,7 +42,7 @@ class praiaInfo extends StatelessWidget {
                       height: 250,
                       width: 400,
                       decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(30)),
-                      color: const Color.fromARGB(255, 255, 254, 236),),
+                      color: Color.fromARGB(255, 255, 254, 236),),
                       child: Text(
                         praia.Rota,
                         textAlign: TextAlign.center,
@@ -61,7 +55,7 @@ class praiaInfo extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       padding: const EdgeInsets.only(bottom: 20, top: 10),
                       margin: const EdgeInsets.only(left: 50),
-                      child: Text('Municipio: ' + praia.LinkMaps, style: const TextStyle(fontSize: 18))
+                      child: Text('Municipio: ${praia.Mun}', style: const TextStyle(fontSize: 18))
                     ),
 
                     Container(
@@ -69,7 +63,7 @@ class praiaInfo extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       width: 400,
                       decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(30)),
-                      color: const Color.fromARGB(255, 255, 254, 236),), 
+                      color: Color.fromARGB(255, 255, 254, 236),), 
                       child: Row(
                           children: [
                             Center( child: 
@@ -84,43 +78,31 @@ class praiaInfo extends StatelessWidget {
                             ),
                           ],
                         ),
-                      
                     ),
-
-  
                 ]
               )
             ),
-          ),
     );
   }
   
-  
-  String Condicao(bool Cond){
+  List _Cond(bool Cond){
+    dynamic retorno;
     if(Cond){
-      return 'Própria'; 
+      retorno = ['Própria', Colors.green];
     }
     else{
-      return 'Imprópria';
+      retorno = ['Imprópria', Colors.red];
     }
-  }
-
-  Color Cor(bool Cond){
-    if(Cond){
-      return Colors.green; 
-    }
-    else{
-      return Colors.red;
-    }
+    return retorno; 
   }
 
   Widget _ConditionTag(bool Cond){
-    String CondS = Condicao(Cond);
+    String CondS = _Cond(Cond)[0];
     return Container(
       alignment: Alignment.centerLeft,
       padding: const EdgeInsets.only(top: 20, bottom: 10),
       margin: const EdgeInsets.only(left: 50),
-      child: Text('Condição: $CondS', style: TextStyle(color: Cor(Cond), fontSize: 18))
+      child: Text('Condição: $CondS', style: TextStyle(color: _Cond(Cond)[1], fontSize: 18))
     );
   }
 }
