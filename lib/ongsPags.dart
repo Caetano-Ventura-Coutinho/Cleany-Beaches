@@ -77,154 +77,47 @@ class ongsPAG extends State<ongsPag> {
     );
   }
 
-  Widget _VerificarEmailB(String Email){
-    if(Email != ''){
-      return IconButton(onPressed: () => launchUrlString(Email), icon: const Icon(Icons.email, color: Colors.black, size: 40));
-    }
-    else{
-      return IconButton(onPressed: (){
-        _Aviso('Endereço de Email');
-      }, icon: const Icon(Icons.email, color: Colors.black, size: 40));
-    }
-  }
-  Widget _VerificarInstaB(String Insta){
-    if(Insta != ''){
-      return IconButton(onPressed: () => launchUrlString(Insta), icon: _imgToIconB(true));
-    }
-    else{
-      return IconButton(onPressed: (){
-        _Aviso('Instagram');
-      }, icon: _imgToIconB(true));
-    }
-  }
-
-  ImageIcon _imgToIconB(bool cond){
+  ImageIcon _imgToIcon(bool cond, Color cor){
     if(cond){
-      return const ImageIcon(AssetImage('img/instagram.png'), size: 40, color: Colors.black,); 
+      return ImageIcon(const AssetImage('img/instagram.png'), size: 40, color: cor,); 
     }
     else{
-      return const ImageIcon(AssetImage('img/facebook.png'), size: 40, color: Colors.black); 
+      return ImageIcon(const AssetImage('img/facebook.png'), size: 40, color: cor); 
     }
   }
 
-  Widget _VerificarFaceB(String Face){
-    if(Face != ''){
-      return IconButton(onPressed: () => launchUrlString(Face), icon: _imgToIconB(false));
-    }
-    else{
-      return IconButton(onPressed: (){
-        _Aviso('Facebook');
-      }, icon: _imgToIconB(false));
-    } 
-  }
-
-  Widget _VerificarTelB(int Tel){
-    if(Tel != 0){
-      return IconButton(onPressed: () => launchUrlString('tel://$Tel'), icon: const Icon(Icons.phone, size: 40, color: Colors.black,),);
+  Widget _VerificarTel(int tel, Color cor){
+    if(tel != 0){
+      return IconButton(onPressed: () => launchUrlString('tel://$tel'), icon: Icon(Icons.phone, size: 40, color: cor),);
     }
     else{
       return IconButton(onPressed: (){
         _Aviso('Telefone');
-      }, icon: const Icon(Icons.phone, size: 40, color: Colors.black,),);
+      }, icon: Icon(Icons.phone, size: 40, color: cor,),);
     } 
   }
 
-  Widget _VerificarSiteB(String Site){
-    if(Site != ''){
-      return IconButton(onPressed: () => launchUrlString(Site), icon: const Icon(Icons.web, color: Colors.black, size: 40));
+  Widget _InstaEFace(String g, String rede, bool icone, Color cor){
+      if(g != ''){
+        return IconButton(onPressed: () => launchUrlString(g), icon: _imgToIcon(icone, cor));
+      }
+      else{
+        return IconButton(onPressed: (){
+          _Aviso(rede);  
+        }, icon: _imgToIcon(icone, cor));
+      }
+  }
+
+  Widget _Site(String g, String rede, IconData icone, Color cor){
+    if(g != ''){
+      return IconButton(onPressed: () => launchUrlString(g), icon: Icon(icone, color: cor, size: 40));
     }
     else{
       return IconButton(onPressed: (){
-        _Aviso('WebSite');
-      }, icon: const Icon(Icons.web, color: Colors.black, size: 40));
-    } 
-  }
-
-  Widget _VerificarEmail(String Email){
-    if(Email != ''){
-      return IconButton(onPressed: () => launchUrlString(Email), icon: const Icon(Icons.email, color: Colors.white, size: 40));
-    }
-    else{
-      return IconButton(onPressed: (){
-        _Aviso('Endereço de Email');
-      }, icon: const Icon(Icons.email, color: Colors.white, size: 40));
+        _Aviso(rede);  
+      }, icon: Icon(icone, color: cor, size: 40));
     }
   }
-  Widget _VerificarInsta(String Insta){
-    if(Insta != ''){
-      return IconButton(onPressed: () => launchUrlString(Insta), icon: _imgToIcon(true));
-    }
-    else{
-      return IconButton(onPressed: (){
-        _Aviso('Instagram');
-      }, icon: _imgToIcon(true));
-    }
-  }
-
-  ImageIcon _imgToIcon(bool cond){
-    if(cond){
-      return const ImageIcon(AssetImage('img/instagram.png'), size: 40, color: Colors.white,); 
-    }
-    else{
-      return const ImageIcon(AssetImage('img/facebook.png'), size: 40, color: Colors.white); 
-    }
-  }
-
-  Widget _VerificarFace(String Face){
-    if(Face != ''){
-      return IconButton(onPressed: () => launchUrlString(Face), icon: _imgToIcon(false));
-    }
-    else{
-      return IconButton(onPressed: (){
-      _Aviso('Facebook');
-      }, icon: _imgToIcon(false));
-    } 
-  }
-
-  Widget _VerificarTel(int Tel){
-    if(Tel != 0){
-      return IconButton(onPressed: () => launchUrlString('tel://$Tel'), icon: const Icon(Icons.phone, size: 40, color: Colors.white,),);
-    }
-    else{
-      return IconButton(onPressed: (){
-        _Aviso('Telefone');
-      }, icon: const Icon(Icons.phone, size: 40, color: Colors.white,),);
-    } 
-  }
-
-
-  Widget _VerificarSite(String Site){
-    if(Site != ''){
-        return IconButton(onPressed: () => launchUrlString(Site), icon: const Icon(Icons.web, color: Colors.white, size: 40));
-    }
-    else{
-      return IconButton(onPressed: (){
-        _Aviso('WebSite');  
-      }, icon: const Icon(Icons.web, color: Colors.white, size: 40));
-    } 
-  }
-
-  Widget _initV(ONG ongs){
-    if(ongs.corText == Colors.black){
-     return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-     children: [_VerificarSiteB(ongs.Site),
-              _VerificarInstaB(ongs.Instagram),
-              _VerificarFaceB(ongs.Facebook),
-              _VerificarEmailB(ongs.Email),
-              _VerificarTelB(ongs.Telefone)]); 
-    }
-    else{
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-     children: [_VerificarSite(ongs.Site),
-              _VerificarInsta(ongs.Instagram),
-              _VerificarFace(ongs.Facebook),
-              _VerificarEmail(ongs.Email),
-              _VerificarTel(ongs.Telefone)]);
-    }
-  }
-
 
   Widget _OngLista(ONG ongs){
     return Container(
@@ -250,7 +143,15 @@ class ongsPAG extends State<ongsPag> {
               ),
             ],
           ),
-          _initV(ongs),
+          Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+           _Site(ongs.Site, 'WebSite', Icons.web, ongs.corText),
+           _InstaEFace(ongs.Instagram, 'Instagram', true, ongs.corText),
+           _InstaEFace(ongs.Facebook, 'Facebook', false, ongs.corText),
+           _Site(ongs.Email, 'Endereço de Email', Icons.email, ongs.corText),
+           _VerificarTel(ongs.Telefone, ongs.corText)
+           ])
         ],
       ),
     );
