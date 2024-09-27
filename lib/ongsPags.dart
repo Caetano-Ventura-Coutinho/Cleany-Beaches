@@ -86,17 +86,6 @@ class ongsPAG extends State<ongsPag> {
     }
   }
 
-  Widget _VerificarTel(int tel, Color cor){
-    if(tel != 0){
-      return IconButton(onPressed: () => launchUrlString('tel://$tel'), icon: Icon(Icons.phone, size: 40, color: cor),);
-    }
-    else{
-      return IconButton(onPressed: (){
-        _Aviso('Telefone');
-      }, icon: Icon(Icons.phone, size: 40, color: cor,),);
-    } 
-  }
-
   Widget _InstaEFace(String g, String rede, bool icone, Color cor){
       if(g != ''){
         return IconButton(onPressed: () => launchUrlString(g), icon: _imgToIcon(icone, cor));
@@ -108,8 +97,8 @@ class ongsPAG extends State<ongsPag> {
       }
   }
 
-  Widget _Site(String g, String rede, IconData icone, Color cor){
-    if(g != ''){
+  Widget _Generica(String g, String rede, IconData icone, Color cor){
+    if(g != '' && g != 'tel://0'){
       return IconButton(onPressed: () => launchUrlString(g), icon: Icon(icone, color: cor, size: 40));
     }
     else{
@@ -146,11 +135,11 @@ class ongsPAG extends State<ongsPag> {
           Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-           _Site(ongs.Site, 'WebSite', Icons.web, ongs.corText),
+           _Generica(ongs.Site, 'WebSite', Icons.web, ongs.corText),
            _InstaEFace(ongs.Instagram, 'Instagram', true, ongs.corText),
            _InstaEFace(ongs.Facebook, 'Facebook', false, ongs.corText),
-           _Site(ongs.Email, 'Endereço de Email', Icons.email, ongs.corText),
-           _VerificarTel(ongs.Telefone, ongs.corText)
+           _Generica(ongs.Email, 'Endereço de Email', Icons.email, ongs.corText),
+           _Generica('tel://${ongs.Telefone}', 'Telefone', Icons.phone, ongs.corText)
            ])
         ],
       ),
