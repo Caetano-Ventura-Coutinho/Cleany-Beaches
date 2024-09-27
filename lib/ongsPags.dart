@@ -77,34 +77,26 @@ class ongsPAG extends State<ongsPag> {
     );
   }
 
-  ImageIcon _imgToIcon(bool cond, Color cor){
-    if(cond){
-      return ImageIcon(const AssetImage('img/instagram.png'), size: 40, color: cor,); 
+  dynamic _Icone(int id, Color cor, dynamic icone){
+    if(id == 0){
+      return ImageIcon(const AssetImage('img/instagram.png'), size: 40, color: cor);
     }
-    else{
+    else if(id == 1){
       return ImageIcon(const AssetImage('img/facebook.png'), size: 40, color: cor); 
     }
+    else{
+      return Icon(icone, color: cor, size: 40);
+    }
   }
 
-  Widget _InstaEFace(String g, String rede, bool icone, Color cor){
-      if(g != ''){
-        return IconButton(onPressed: () => launchUrlString(g), icon: _imgToIcon(icone, cor));
-      }
-      else{
-        return IconButton(onPressed: (){
-          _Aviso(rede);  
-        }, icon: _imgToIcon(icone, cor));
-      }
-  }
-
-  Widget _Generica(String g, String rede, IconData icone, Color cor){
+  Widget _Rede(String g, String rede, dynamic icone, Color cor, int id){
     if(g != '' && g != 'tel://0'){
-      return IconButton(onPressed: () => launchUrlString(g), icon: Icon(icone, color: cor, size: 40));
+      return IconButton(onPressed: () => launchUrlString(g), icon: _Icone(id, cor, icone));
     }
     else{
       return IconButton(onPressed: (){
         _Aviso(rede);  
-      }, icon: Icon(icone, color: cor, size: 40));
+      }, icon: _Icone(id, cor, icone));
     }
   }
 
@@ -135,11 +127,11 @@ class ongsPAG extends State<ongsPag> {
           Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-           _Generica(ongs.Site, 'WebSite', Icons.web, ongs.corText),
-           _InstaEFace(ongs.Instagram, 'Instagram', true, ongs.corText),
-           _InstaEFace(ongs.Facebook, 'Facebook', false, ongs.corText),
-           _Generica(ongs.Email, 'Endereço de Email', Icons.email, ongs.corText),
-           _Generica('tel://${ongs.Telefone}', 'Telefone', Icons.phone, ongs.corText)
+           _Rede(ongs.Site, 'WebSite', Icons.web, ongs.corText, 3),
+           _Rede(ongs.Instagram, 'Instagram', null, ongs.corText, 0),
+           _Rede(ongs.Facebook, 'Facebook', null, ongs.corText, 1),
+           _Rede(ongs.Email, 'Endereço de Email', Icons.email, ongs.corText, 3),
+           _Rede('tel://${ongs.Telefone}', 'Telefone', Icons.phone, ongs.corText, 3)
            ])
         ],
       ),
